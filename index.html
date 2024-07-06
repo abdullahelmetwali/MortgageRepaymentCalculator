@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Mortgage repayment calculator</title>
+</head>
+<body>
+  <main class="parentCont">
+    <section class="calcSec">
+      <div class="head">
+        <h1>Mortgage Calculator</h1>
+        <button type="button" class="clrBtn">Clear All</button>
+      </div>
+      <form >
+        <div class="mortgageAmount" style="position: relative;">
+          <label for="amount">Mortgage Amount</label> <br>
+          <input type="number" id="amount" name="amount" class="amountInp" required>
+          <p class="amount empty">$</p>
+        </div>
+        <div class="term-rate">
+          <div class="term" style="position: relative;">
+            <label for="termInp">Mortgage Term</label> <br>
+            <input type="number" name="termInp" id="termInp" class="termInp" required>
+            <p class="years empty">Years</p>
+          </div>
+          <div class="rate" style="position: relative;">
+            <label for="rateInp">Interest Rate</label> <br>
+            <input type="number" class="rateInp" name="rateInp" id="rateInp" required>
+            <p class="percentage empty">%</p>
+          </div>
+        </div>
+        <div class="mortgageType">
+          <h2>Mortgage Type</h2>
+          <div class="type" onclick="selectOption('repayment')">
+            <label for="repayment">
+              <input type="radio" name="type" id="repayment" checked>
+              Repayment
+            </label>
+          </div>
+          <div class="type" onclick="selectOption('interest-only')">
+            <label for="interest-only">
+              <input type="radio" name="type" id="interest-only">
+              Interest Only
+            </label>
+          </div>
+        </div>
+        <div style="background-color: var(--lime); width: fit-content;border-radius: 20px;margin: 1rem 0;">
+          <button type="button" class="calcRep" onclick="getResults()">
+            <img src="./assets/images/icon-calculator.svg" alt="calculator">
+            Calculate Repayments
+          </button>
+        </div>
+      </form>
+    </section>
+    <section class="resSec" id="results">
+      <div>
+        <img src="/assets/images/illustration-empty.svg" alt="illustration-empty">
+      </div>
+      <div>
+        <h1>Results shown here</h1>
+        <p class="intro">Complete the form and click "Calculate Repayments" to <br> see what your monthly repayments would be .</p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
